@@ -144,9 +144,25 @@ SVG = dict(
 # ----------------------------------------------------------------------
 # Partials
 # ----------------------------------------------------------------------
+def share_card(og_image):
+    """Map a page's picture to its 1200x630 share card in images/og/.
+
+    Link previews (WhatsApp, iMessage, Facebook, X) want a wide image at an
+    absolute URL. tools/gen_og.py builds one card per photograph; anything
+    without a card falls back to the branded default.
+    """
+    default = "images/og/og-default.jpg"
+    if not og_image:
+        return default
+    candidate = "images/og/" + os.path.basename(og_image)
+    if candidate.endswith(".svg"):
+        candidate = candidate[:-4] + ".jpg"
+    return candidate if os.path.exists(os.path.join(ROOT, *candidate.split("/"))) else default
+
+
 def head(title, desc, canonical, depth=0, extra_ld="", og_type="website", og_image=None):
     up = "../" * depth
-    img = og_image or "images/logo-og.jpg"
+    img = share_card(og_image)
     return """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,8 +187,17 @@ def head(title, desc, canonical, depth=0, extra_ld="", og_type="website", og_ima
   <meta property="og:description" content="{DESC}" />
   <meta property="og:url" content="{CANON}" />
   <meta property="og:image" content="{BASE}/{IMG}" />
+  <meta property="og:image:secure_url" content="{BASE}/{IMG}" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{NAMEP}, {PHONE}, Toronto and the GTA" />
   <meta property="og:locale" content="en_CA" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{TITLE}" />
+  <meta name="twitter:description" content="{DESC}" />
+  <meta name="twitter:image" content="{BASE}/{IMG}" />
+  <meta name="twitter:image:alt" content="{NAMEP}, {PHONE}, Toronto and the GTA" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -180,8 +205,9 @@ def head(title, desc, canonical, depth=0, extra_ld="", og_type="website", og_ima
   <link rel="stylesheet" href="{UP}css/theme.css?v=1">
 {LD}</head>
 <body>
-""".format(NAME=NAME, TITLE=title, DESC=desc, CANON=canonical, UP=up, BASE=BASE,
-           LAT=LAT, LON=LON, OGTYPE=og_type, LD=extra_ld, IMG=img)
+""".format(NAME=NAME, NAMEP=strip(NAME), PHONE=PHONE, TITLE=title, DESC=desc,
+           CANON=canonical, UP=up, BASE=BASE, LAT=LAT, LON=LON, OGTYPE=og_type,
+           LD=extra_ld, IMG=img)
 
 
 def ld_business():
@@ -190,7 +216,7 @@ def ld_business():
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "{NAME}",
-    "image": "{BASE}/images/logo-og.jpg",
+    "image": "{BASE}/images/og/og-default.jpg",
     "logo": "{BASE}/images/logo.svg",
     "url": "{BASE}/",
     "telephone": "{PHONE}",

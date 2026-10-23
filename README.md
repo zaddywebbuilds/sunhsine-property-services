@@ -62,6 +62,12 @@ either side, which is intentional.
   smaller board crops, trimmed of their edge slivers.
 - `images/svc-*.svg` and `images/logo.svg` were drawn for this site in the brand
   palette. Regenerate them with `tools/gen_svg.py` if the palette changes.
+- `images/og/` holds the 1200x630 link preview cards, one per photograph plus a
+  branded default. Each card fits its photo whole on a brand background with the
+  business name and phone on a bar underneath, so the same no-crop and no-overprint
+  rules apply to shared links. Rebuild them with `tools/gen_og.py`. Every page points
+  `og:image`, `og:image:width/height/alt` and `twitter:image` at its card by absolute
+  URL, which is what WhatsApp, iMessage, Facebook and X need for a large preview.
 
 ### Before this goes in front of customers
 
@@ -78,6 +84,14 @@ either side, which is intentional.
   inventing quotes.
 - The Google listing spells the name **"sunhsine"**. The site uses **"Sunshine"**
   throughout, matching the logo. Worth correcting on Google.
+
+## Mobile
+
+Checked at 375px and 768px on the home page, a service page and an article:
+no horizontal scroll, 16px base text, tap targets at 46px, and the rotating
+service ring steps its radius and card size down at 820px and 520px so no card
+is clipped by the window frame. A sticky WhatsApp, call and quote bar sits at
+the bottom of the viewport below 820px.
 
 ## Building
 
