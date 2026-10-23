@@ -287,17 +287,12 @@ def btns(depth=0, quote_label="Free Quote on WhatsApp"):
 
 
 def hero_media(depth=0, media=None, alt=""):
-    """The floating 9:16 panel in a hero. Defaults to the walkthrough video."""
+    """The floating panel in a hero. Shows the picture whole, never cropped."""
     up = "../" * depth
-    if media is None:
-        return """          <video muted loop playsinline autoplay poster="{UP}videos/hero-poster.jpg" preload="metadata" aria-label="Walkthrough of a Toronto home before and after a Sunshine clean">
-            <source src="{UP}videos/hero.mp4" type="video/mp4">
-            <img src="{UP}videos/hero-poster.jpg" alt="Walkthrough of a Toronto home before and after a Sunshine clean" />
-          </video>""".format(UP=up)
     return '          <img src="%s%s" alt="%s" />' % (up, media, alt)
 
 
-def hero_small(depth, trail, h1, glow, sub, media=None, alt="", buttons=None):
+def hero_small(depth, trail, h1, glow, sub, media, alt="", buttons=None):
     return """  <section class="osw osw-small">
     <div class="osw-arch"><span></span><span></span><span></span><span></span><span></span></div>
 {TOPBAR}{CRUMBS}

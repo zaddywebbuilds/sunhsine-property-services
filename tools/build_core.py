@@ -61,11 +61,19 @@ home = head(
       <div class="osw-scene osw-scene-left">
         <div class="osw-product-aura"></div>
         <div class="osw-product-aura cool"></div>
-        <div class="osw-product">
-          <video muted loop playsinline autoplay poster="videos/hero-poster.jpg" preload="metadata" aria-label="Walkthrough of a Toronto home before and after a Sunshine clean">
-            <source src="videos/hero.mp4" type="video/mp4">
-            <img src="videos/hero-poster.jpg" alt="Walkthrough of a Toronto home before and after a Sunshine clean" />
-          </video>
+        <div class="osw-panel">
+          <span class="osw-panel-eyebrow">Toronto &amp; the GTA</span>
+          <h2>Clean inside.<br>Cared for outside.</h2>
+          <p>Houses, rentals, offices and everything in between. Cleaning, turnovers, cleanouts, glass, washing and winter clearing, handled by one crew on one invoice.</p>
+          <ul class="osw-panel-list">
+            <li>A price agreed before we start</li>
+            <li>Quote back the same day, usually within the hour</li>
+            <li>Open seven days, from 7am on weekdays</li>
+          </ul>
+          <div class="osw-panel-foot">
+            <span><strong>{PHONE}</strong></span>
+            <span>{HOURS}</span>
+          </div>
         </div>
       </div>
 
@@ -108,9 +116,9 @@ home = head(
         <div class="why-card">
           <div class="why-media">
             <img src="images/residential-cleaning.jpg" alt="Cleaner vacuuming a bright Toronto living room" loading="lazy">
-            <span class="icon sun">{SPRAY}</span>
           </div>
           <div class="why-body">
+            <span class="icon sun">{SPRAY}</span>
             <h3>Inside and Outside</h3>
             <p>Kitchens, bathrooms and floors, plus windows, driveways, cleanouts and snow. One number covers the lot.</p>
           </div>
@@ -119,9 +127,9 @@ home = head(
         <div class="why-card">
           <div class="why-media">
             <img src="images/move-out-cleaning.jpg" alt="Empty Toronto apartment cleaned before handover" loading="lazy">
-            <span class="icon steel">{KEY}</span>
           </div>
           <div class="why-body">
+            <span class="icon steel">{KEY}</span>
             <h3>Built for Handovers</h3>
             <p>Move outs, tenant turnovers and listing prep, done to the standard a walkthrough is judged by.</p>
           </div>
@@ -130,9 +138,9 @@ home = head(
         <div class="why-card">
           <div class="why-media">
             <img src="images/post-reno-cleanup.jpg" alt="Construction dust vacuumed after a Toronto renovation" loading="lazy">
-            <span class="icon gold">{CHECK}</span>
           </div>
           <div class="why-body">
+            <span class="icon gold">{CHECK}</span>
             <h3>Price Agreed First</h3>
             <p>You get a quote from photos before anyone arrives. No hourly surprises at the door.</p>
           </div>
@@ -141,9 +149,9 @@ home = head(
         <div class="why-card">
           <div class="why-media">
             {WAMOCK}
-            <span class="icon slate">{CHAT}</span>
           </div>
           <div class="why-body">
+            <span class="icon slate">{CHAT}</span>
             <h3>Quote by WhatsApp</h3>
             <p>Photos in, price out. Most quotes come back the same day, often within the hour.</p>
           </div>
@@ -159,13 +167,12 @@ home = head(
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">A look at the work</span>
-        <h2>Before the visit, and after it</h2>
+        <h2>A look at the work</h2>
       </div>
       <div class="grid grid-2">
         <a class="bx-tile" href="{WA}" target="_blank" rel="noopener">
           <div class="bx-media">
-            <video muted loop playsinline autoplay poster="videos/hero-poster.jpg" preload="metadata"><source src="videos/hero.mp4" type="video/mp4"></video>
-            <div class="bx-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+            <img class="bg" src="images/property-exterior.jpg" alt="Well kept Toronto home with a clean driveway and lawn" loading="lazy">
           </div>
           <h3>GET A QUOTE <span class="arrow">&#8599;</span></h3>
           <p>Send photos of the space on WhatsApp and get a price back today.</p>
@@ -264,6 +271,7 @@ home = head(
       <div class="faq-layout">
         <div class="faq-deco">
           <div class="deco-media"><img src="images/bathroom-cleaning.jpg" alt="Shower glass being cleaned in a Toronto bathroom" loading="lazy"></div>
+          <div class="deco-media"><img src="images/t-bathroom-detail.jpg" alt="Close detail of a cleaned shower screen" loading="lazy"></div>
           <div class="deco-tag"><span class="dot"></span>Glass, tile and grout</div>
         </div>
 
@@ -271,6 +279,7 @@ home = head(
 
         <div class="faq-deco">
           <div class="deco-media"><img src="images/window-cleaning.jpg" alt="Interior window being cleaned in a Toronto home" loading="lazy"></div>
+          <div class="deco-media"><img src="images/t-highrise-windows.jpg" alt="Window cleaning above the Toronto skyline" loading="lazy"></div>
           <div class="deco-tag"><span class="dot"></span>Windows, frames and tracks</div>
         </div>
       </div>
@@ -279,7 +288,7 @@ home = head(
 
 {CTA}{FOOT}""".format(
     TOPBAR=topbar(0), RING="\n            ".join(ring_cards), WA=WA_QUOTE,
-    WAICON=SVG["wa"], TEL=PHONE_TEL, PHONE=PHONE, SPRAY=SVG["spray"], KEY=SVG["key"],
+    WAICON=SVG["wa"], TEL=PHONE_TEL, PHONE=PHONE, HOURS=HOURS_SHORT, SPRAY=SVG["spray"], KEY=SVG["key"],
     CHECK=SVG["check"], CHAT=SVG["chat"], WAMOCK=wa_mock(0), AREA=AREA,
     TILES=service_tiles(0, [s for s in SERVICES if s["slug"] != "property-turnover-toronto"]),
     STRIP=photo_strip(0, [

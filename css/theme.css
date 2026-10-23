@@ -1769,3 +1769,164 @@ p { margin-bottom: 1rem; color: var(--c-ink-soft); }
   .osw-logo small { letter-spacing: .22em; }
   .osw-bar-left, .osw-bar-right { justify-content: center; flex-wrap: wrap; }
 }
+
+/* ============================================================
+   WHOLE-IMAGE RULE
+   No picture is cropped to make it fit a box, and nothing is
+   printed on top of one. Frames keep a fixed shape so grid rows
+   stay level, and the image is fitted inside that shape in full
+   against a brand background rather than being cut to fill it.
+   ============================================================ */
+
+/* Hero panel takes the shape of its own picture instead of a 9:16 crop. */
+.osw-product {
+  width: clamp(260px, 34vw, 460px);
+  aspect-ratio: auto;
+  background: var(--c-cream);
+}
+.osw-product img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Cards: whole image, centred, brand background filling any margin. */
+.service-tile-media {
+  aspect-ratio: 4/3;
+  background: var(--c-sand-soft);
+}
+.service-tile-media img,
+.service-tile-media video { object-fit: contain; }
+
+.why-media { aspect-ratio: 4/3; }
+.why-media img { object-fit: contain; }
+
+.photo-card img {
+  object-fit: contain;
+  background: var(--c-sand-soft);
+}
+
+.bx-media { background: var(--c-ink); }
+.bx-tile img.bg,
+.bx-tile video { object-fit: contain; }
+
+.deco-media { background: var(--c-sand-soft); }
+.faq-deco img,
+.faq-deco video { object-fit: contain; }
+
+.svc-card img {
+  object-fit: contain;
+  background: var(--c-cream);
+}
+.svc-item {
+  width: 138px; height: 138px;
+  margin: -69px 0 0 -69px;
+}
+
+.sidebar .glass-card > img {
+  object-fit: contain;
+  background: var(--c-sand-soft);
+}
+
+/* Why-card icons move into the body, so no badge sits on the photo. */
+.why-media .icon { display: none; }
+.why-body .icon {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff;
+  margin-bottom: .6rem;
+  box-shadow: 0 8px 20px rgba(20,45,75,0.25);
+  border: 2px solid rgba(255,255,255,0.85);
+}
+.why-body .icon svg { width: 20px; height: 20px; }
+.why-body { padding-top: 1.15rem; }
+
+/* ============================================================
+   HERO TEXT PANEL
+   Replaces the floating media panel on the home page, leaving
+   the rotating ring as the hero's moving element.
+   ============================================================ */
+.osw-panel {
+  position: relative;
+  z-index: 3;
+  max-width: 460px;
+  text-align: left;
+  background: var(--c-glass-strong);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--c-glass-border);
+  border-radius: var(--r-lg);
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+  box-shadow: var(--sh-glass);
+  animation: floatY 6.5s ease-in-out infinite;
+}
+.osw-panel-eyebrow {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-size: .68rem; font-weight: 700; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--c-ocean);
+  margin-bottom: .7rem;
+}
+.osw-panel-eyebrow::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--c-sun); box-shadow: 0 0 8px var(--c-sun);
+}
+.osw-panel h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height: 1.04;
+  margin-bottom: .7rem;
+}
+.osw-panel > p {
+  font-size: .95rem;
+  color: var(--c-ink-soft);
+  margin-bottom: 1rem;
+}
+.osw-panel-list { list-style: none; margin: 0 0 1.1rem; padding: 0; }
+.osw-panel-list li {
+  display: flex; align-items: flex-start; gap: .55rem;
+  font-size: .9rem; font-weight: 500; color: var(--c-ink);
+  padding: .3rem 0;
+}
+.osw-panel-list li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 18px; height: 18px; margin-top: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-sun), var(--c-gold));
+}
+.osw-panel-foot {
+  display: flex; flex-wrap: wrap; gap: .4rem 1.1rem;
+  padding-top: .9rem;
+  border-top: 1px solid rgba(20,45,75,.12);
+  font-size: .84rem; color: var(--c-ink-soft);
+}
+.osw-panel-foot strong { color: var(--c-ink); }
+
+/* The ring is now the hero's main visual, so give it more room. */
+.osw-stage-home .svc-ring { width: min(520px, 96%); }
+.osw-stage-home .osw-scene-left { justify-content: center; }
+
+@media (max-width: 900px) {
+  .osw-panel { max-width: none; animation: none; }
+  .osw-stage-home .svc-ring { width: min(420px, 92%); }
+}
+
+/* Side panels and gallery cards let the picture set its own height,
+   so nothing is trimmed and the caption sits below it. */
+.faq-deco { justify-content: flex-start; }
+.deco-media { flex: 0 0 auto; min-height: 0; }
+.deco-media img {
+  position: static;
+  width: 100%;
+  height: auto;
+  object-fit: initial;
+}
+.faq-deco .deco-tag { margin-top: auto; }
+
+.photo-card img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: initial;
+}
+.photo-card.wide img { aspect-ratio: auto; }
+.photo-card span { margin-top: auto; }

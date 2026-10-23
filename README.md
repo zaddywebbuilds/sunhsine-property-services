@@ -38,17 +38,26 @@ The layout and component set follow the Oasis Massage Studio theme (the cinemati
 palette was rebuilt around the Sunshine logo: navy `#16293F`, brand blue `#2E6291`,
 sun gold `#FFC24A` and `#D49A18`, warm sand `#F3EADA`, sky `#BBD7EE`.
 
-One house rule is enforced in CSS under `SURFACE MEDIA RULES` in `css/theme.css`:
-**every photograph sits on the surface as its own block.** No image is used as a faded
-background layer with copy printed on top, and no caption covers a picture. Media on
-top, words underneath. This changes `.bx-tile`, `.svc-card` and `.faq-deco` from the
-original theme's overlay treatment.
+Two house rules are enforced in CSS, both near the end of `css/theme.css`:
+
+`SURFACE MEDIA RULES` - **every photograph sits on the surface as its own block.** No
+image is used as a faded background layer with copy printed on top, and no caption
+covers a picture. Media on top, words underneath. This changes `.bx-tile`, `.svc-card`
+and `.faq-deco` from the original theme's overlay treatment, and moves the why-card
+icons off the photo and into the card body.
+
+`WHOLE-IMAGE RULE` - **no picture is cropped to make it fit.** Frames keep a fixed
+shape so grid rows stay level, and the image is fitted inside that shape in full
+against a brand background rather than cut to fill it. The hero panel takes the shape
+of its own picture. Portrait images in landscape frames therefore show sand margins
+either side, which is intentional.
 
 ## Media
 
-- `videos/hero.mp4` is the supplied before and after walkthrough clip, re-encoded for
-  web and stripped of audio. It is the hero on every page that does not have its own
-  photograph.
+- There is no video on the site. The supplied before and after clip had its
+  "BEFORE VS AFTER" caption burned into the picture, which breaks both house rules
+  above, so the home page hero uses a text panel in that slot and the rotating service
+  ring carries the motion. The clip is still in git history if it is ever wanted back.
 - `images/*.jpg` are the 18 supplied concept photographs, resized and, for the ten
   smaller board crops, trimmed of their edge slivers.
 - `images/svc-*.svg` and `images/logo.svg` were drawn for this site in the brand
