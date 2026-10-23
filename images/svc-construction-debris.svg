@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Construction debris bin with lumber">
+  <title>Construction debris bin with lumber</title>
+  <defs>
+    <linearGradient id="sky7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DCEBF8"/><stop offset="62%" stop-color="#FCEDCC"/><stop offset="100%" stop-color="#FAE2B4"/>
+    </linearGradient>
+    <linearGradient id="gold7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFC24A"/><stop offset="100%" stop-color="#D49A18"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky7)"/>
+  <circle cx="648" cy="118" r="62" fill="#FFC24A" opacity=".92"/>
+  <g stroke="#F0B74E" stroke-width="9" stroke-linecap="round" opacity=".85">
+    <line x1="648" y1="20" x2="648" y2="40"/><line x1="737" y1="118" x2="757" y2="118"/>
+    <line x1="714" y1="52" x2="728" y2="38"/><line x1="714" y1="184" x2="728" y2="198"/>
+    <line x1="582" y1="52" x2="568" y2="38"/>
+  </g>
+  <path d="M0 404 H800 V500 H0 Z" fill="#E8DCC4"/>
+  <path d="M0 404 H800" stroke="#CDBE9E" stroke-width="4"/>
+
+  <g>
+    <path d="M214 258 h372 l-38 146 h-296 z" fill="#2E6291"/>
+    <rect x="206" y="244" width="388" height="26" rx="8" fill="#1F3D5C"/>
+    <g stroke="#1F3D5C" stroke-width="6" opacity=".45">
+      <line x1="300" y1="270" x2="286" y2="404"/><line x1="400" y1="270" x2="400" y2="404"/>
+      <line x1="500" y1="270" x2="514" y2="404"/>
+    </g>
+    <g transform="rotate(-14 400 230)">
+      <rect x="248" y="196" width="230" height="22" rx="4" fill="url(#gold7)"/>
+      <rect x="286" y="166" width="230" height="22" rx="4" fill="#9A6D12"/>
+    </g>
+    <g transform="translate(560,286)">
+      <path d="M8 56 a52 52 0 0 1 104 0 z" fill="#FFC24A"/>
+      <rect x="-4" y="54" width="128" height="18" rx="9" fill="#D49A18"/>
+      <path d="M60 6 v48" stroke="#D49A18" stroke-width="8"/>
+    </g>
+  </g></svg>

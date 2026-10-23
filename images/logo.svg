@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Sunshine Property Services">
+  <title>Sunshine Property Services</title>
+  <g stroke="#F0B74E" stroke-width="22" stroke-linecap="round"><line x1="300.0" y1="132.0" x2="300.0" y2="85.0"/><line x1="230.6" y1="154.5" x2="203.0" y2="116.5"/><line x1="369.4" y1="154.5" x2="397.0" y2="116.5"/><line x1="190.6" y1="205.8" x2="147.0" y2="188.2"/><line x1="409.4" y1="205.8" x2="453.0" y2="188.2"/></g>
+  <circle cx="300" cy="250" r="88" fill="#F0B74E"/>
+  <path d="M300 232 L470 372 H130 Z" fill="#1F3D5C"/>
+  <rect x="172" y="372" width="256" height="166" fill="#2E6291"/>
+  <rect x="130" y="532" width="340" height="16" rx="8" fill="#1F3D5C"/>
+  <rect x="212" y="408" width="48" height="44" fill="#FDF7EC"/>
+  <rect x="340" y="408" width="48" height="44" fill="#FDF7EC"/>
+  <rect x="276" y="446" width="48" height="92" fill="#FDF7EC"/>
+</svg>

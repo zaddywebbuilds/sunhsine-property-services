@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Fridge and washer removed from a Toronto home">
+  <title>Fridge and washer removed from a Toronto home</title>
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DCEBF8"/><stop offset="62%" stop-color="#FCEDCC"/><stop offset="100%" stop-color="#FAE2B4"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFC24A"/><stop offset="100%" stop-color="#D49A18"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky3)"/>
+  <circle cx="648" cy="118" r="62" fill="#FFC24A" opacity=".92"/>
+  <g stroke="#F0B74E" stroke-width="9" stroke-linecap="round" opacity=".85">
+    <line x1="648" y1="20" x2="648" y2="40"/><line x1="737" y1="118" x2="757" y2="118"/>
+    <line x1="714" y1="52" x2="728" y2="38"/><line x1="714" y1="184" x2="728" y2="198"/>
+    <line x1="582" y1="52" x2="568" y2="38"/>
+  </g>
+  <path d="M0 404 H800 V500 H0 Z" fill="#E8DCC4"/>
+  <path d="M0 404 H800" stroke="#CDBE9E" stroke-width="4"/>
+
+  <g>
+    <rect x="256" y="150" width="152" height="254" rx="16" fill="#4C7FA8"/>
+    <rect x="256" y="150" width="152" height="92" rx="16" fill="#2E6291"/>
+    <rect x="382" y="190" width="12" height="40" rx="6" fill="#FDF7EC"/>
+    <rect x="382" y="264" width="12" height="62" rx="6" fill="#FDF7EC"/>
+    <path d="M256 246 h152" stroke="#16293F" stroke-width="5" opacity=".3"/>
+    <rect x="436" y="216" width="150" height="188" rx="16" fill="#1F3D5C"/>
+    <circle cx="511" cy="310" r="52" fill="#DCEBF8"/><circle cx="511" cy="310" r="34" fill="#2E6291"/>
+    <rect x="456" y="236" width="110" height="22" rx="11" fill="url(#gold3)"/>
+  </g></svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zaddywebbuilds.github.io/sunhsine-property-services/sitemap.xml
